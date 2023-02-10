@@ -34,6 +34,7 @@ Route::group(['middleware'=>'admin_auth'],function(){
     Route::get('admin/coupon/delete/{id}',[CouponController::class,'delete']);
     Route::post('admin/coupon/manage_coupon_process',[CouponController::class,'manage_coupon_process']); //for insert the coupon in database
     Route::get('admin/coupon/manage_coupon/{id}',[CouponController::class,'manage_coupon']); //with data is id found
+    Route::get('admin/coupon/status/{status}/{id}',[CouponController::class,'status']);
    
     Route::get('admin/passwordeupdate',[AdminController::class,'updatepassword']); // for creating the hash password incription
     Route::get('admin/logout', function () {

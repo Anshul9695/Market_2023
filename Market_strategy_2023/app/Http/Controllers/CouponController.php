@@ -84,4 +84,11 @@ class CouponController extends Controller
     //    $model=Coupon::find($id);
     //    print_r($model);
     }
+    public function status(Request $request,$status,$id){
+       $model=Coupon::find($id);
+       $model->status=$status;
+       $model->save();
+       $request->session()->flash('message','Status updated successfully..');
+       return redirect('admin/coupon/couponList');
+    }
 }

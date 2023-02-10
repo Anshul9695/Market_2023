@@ -36,9 +36,12 @@
                             <td>{{$list->coupon_value}}</td>
                             <td>{{$list->type}}</td>
                             <td class="process">{{$list->min_order_amt}}</td>
-                            <td>
+                            @if($list->status==1)
+                            <td>  <a href="{{url('admin/coupon/status/0')}}/{{$list->id}}"><button type="button" class="btn btn-warning">  Active</button></a>
+                            @elseif($list->status==0)
+                            <td>  <a href="{{url('admin/coupon/status/1')}}/{{$list->id}}"><button type="button" class="btn btn-warning">Deactive</button></a>
+                            @endif
                                 <a href="{{url('admin/coupon/delete')}}/{{$list->id}}"><button type="button" class="btn btn-danger">Delete</button></a>
-                                <a href=""><button type="button" class="btn btn-warning">Active</button></a>
                                 <a href="{{url('admin/coupon/manage_coupon')}}/{{$list->id}}"><button type="button" class="btn btn-primary">Edit</button></a>
                             </td>
                         </tr>
