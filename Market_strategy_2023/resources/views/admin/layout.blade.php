@@ -73,6 +73,10 @@
                             <a href="{{url('admin/coupon/couponList')}}">
                                 <i class="fas fa-tachometer-alt"></i>Coupon</a>
                         </li>
+                        <li>
+                            <a href="{{url('admin/size/sizeList')}}">
+                                <i class="fas fa-tachometer-alt"></i>Size</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
