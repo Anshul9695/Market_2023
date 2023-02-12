@@ -29,12 +29,12 @@
                         <td class="process">{{$list->size}}</td>
                         <td>
                             @if($list->status==1)
-                            <a href=""><button type="button" class="btn btn-primary"> Active</button></a>
+                            <a href="{{url('admin/size/status/0')}}/{{$list->id}}"><button type="button" class="btn btn-primary"> Active</button></a>
                             @elseif($list->status==0)
-                            <a href=""><button type="button" class="btn btn-warning"> Deactive</button></a>
+                            <a href="{{url('admin/size/status/1')}}/{{$list->id}}"><button type="button" class="btn btn-warning"> Deactive</button></a>
                             @endif
                             <a href="{{url('admin/size/manage_size')}}/{{$list->id}}"><button type="button" class="btn btn-success"> Edit</button></a>
-                            <a href=""><button type="button" class="btn btn-danger"> Delete</button></a>
+                            <a href="{{url('admin/size/delete')}}/{{$list->id}}"><button type="button" class="btn btn-danger"> Delete</button></a>
                         </td>
                     </tr>
                     @endforeach

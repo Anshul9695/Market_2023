@@ -42,7 +42,10 @@ Route::group(['middleware'=>'admin_auth'],function(){
    Route::get('admin/size/manage_size',[SizeController::class,'manage_size']); //get form in insert mode
    Route::post('admin/size/manage_size_process',[SizeController::class,'manage_size_process']);  //insert and update the data
    Route::get('admin/size/manage_size/{id}',[SizeController::class,'manage_size']); 
-   
+   Route::get('admin/size/delete/{id}',[SizeController::class,'delete']);  //for delete
+   Route::get('admin/size/manage_size/{id}',[SizeController::class,'manage_size']); // for edit
+   Route::get('admin/size/status/{status}/{id}',[SizeController::class,'status']); // for status
+
     Route::get('admin/passwordeupdate',[AdminController::class,'updatepassword']); // for creating the hash password incription
     Route::get('admin/logout', function () {
       session()->put('ADMIN_LOGIN');
